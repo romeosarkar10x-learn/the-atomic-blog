@@ -1,6 +1,12 @@
 {
     "name": "atomic-blog",
     "version": "0.1.0",
+    "author": "Romeo Sarkar",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/romeosarkar10x-learn/the-atomic-blog"
+    },
+    "homepage": "/the-atomic-blog",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
