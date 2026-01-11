@@ -1,5 +1,13 @@
-on: [push]
 name: Build and deploy to 'Github Pages'
+
+on:
+    push:
+        branches:
+            - main
+        paths-ignore:
+            - "README.md"
+            - ".gitignore"
+            - ".vscode/**"
 
 jobs:
     build-and-upload-to-artifacts:
