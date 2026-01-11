@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Post } from "../../types/post";
 import PostContext from "../../contexts/PostContext/PostContext";
 
 export default function Results() {

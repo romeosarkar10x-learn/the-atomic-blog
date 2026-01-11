@@ -1,4 +1,3 @@
-import { Post } from "../../types/post";
 import List from "../List";
 
 export default function Posts() {

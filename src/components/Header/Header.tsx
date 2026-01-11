@@ -1,9 +1,7 @@
-import { Dispatch, SetStateAction, useContext } from "react";
-import { OnClearPostsFnType } from "../../types/fn";
-import { Post } from "../../types/post";
 import Results from "../Results";
 import SearchPosts from "../SearchPosts";
 import PostContext from "../../contexts/PostContext/PostContext";
+import { useContext } from "react";
 
 export default function Header() {
     const context = useContext(PostContext);

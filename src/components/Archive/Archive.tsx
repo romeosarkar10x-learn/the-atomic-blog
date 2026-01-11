@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { OnAddPostFnType } from "../../types/fn";
 import { createRandomPost } from "../../utils/createRandomPost";
 import PostContext from "../../contexts/PostContext/PostContext";
 
