@@ -45,14 +45,6 @@ section {
     margin: 0 auto;
 }
 
-header {
-    margin-bottom: 32px;
-    font-weight: bold;
-
-    justify-content: space-between;
-    display: flex;
-}
-
 h1 {
     font-size: 26px;
     display: flex;
