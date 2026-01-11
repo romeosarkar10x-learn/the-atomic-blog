@@ -54,3 +54,5 @@ This project was created as part of the course materials from **Jonas Schmedtman
 ## 📝 License
 
 This is a learning project. Feel free to use it for educational purposes.
+
+# Testing if this triggers 'Github Actions' workflow!
