@@ -7,6 +7,7 @@ import Archive from "../Archive";
 import Footer from "../Footer";
 
 import { createRandomPost } from "../../utils/createRandomPost";
+import PostContext from "../../contexts/PostContext/PostContext";
 
 export default function App() {
     const [posts, setPosts] = useState(() => Array.from({ length: 30 }, () => createRandomPost()));
@@ -36,20 +37,26 @@ export default function App() {
     );
 
     return (
-        <section>
-            <button onClick={() => setIsFakeDark((isFakeDark) => !isFakeDark)} className="btn-fake-dark-mode">
-                {isFakeDark ? "☀️" : "🌙"}
-            </button>
+        /* Provide value to child components */
+        <PostContext.Provider
+            value={{
+                posts: searchedPosts,
+                onAddPost: handleAddPost,
+                onClearPosts: handleClearPosts,
+                searchQuery,
+                setSearchQuery,
+            }}
+        >
+            <section>
+                <button onClick={() => setIsFakeDark((isFakeDark) => !isFakeDark)} className="btn-fake-dark-mode">
+                    {isFakeDark ? "☀️" : "🌙"}
+                </button>
 
-            <Header
-                posts={searchedPosts}
-                onClearPosts={handleClearPosts}
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-            />
-            <Main posts={searchedPosts} onAddPost={handleAddPost} />
-            <Archive onAddPost={handleAddPost} />
-            <Footer />
-        </section>
+                <Header />
+                <Main />
+                <Archive />
+                <Footer />
+            </section>
+        </PostContext.Provider>
     );
 }

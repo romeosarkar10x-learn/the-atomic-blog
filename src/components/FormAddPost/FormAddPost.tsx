@@ -1,6 +1,18 @@
-export default function FormAddPost({ onAddPost }: { onAddPost: OnAddPostFnType }) {
+import { useContext, useState } from "react";
+import PostContext from "../../contexts/PostContext/PostContext";
+
+export default function FormAddPost() {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
+
+    const context = useContext(PostContext);
+
+    if (context === null) {
+        console.error("[FormAddPost] Err: 'context' is 'null'");
+        return <></>;
+    }
+
+    const { onAddPost } = context;
 
     const handleSubmit = function (e: React.FormEvent) {
         e.preventDefault();

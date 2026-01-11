@@ -1,6 +1,17 @@
+import { useContext } from "react";
 import { Post } from "../../types/post";
+import PostContext from "../../contexts/PostContext/PostContext";
 
-export default function List({ posts }: { posts: Post[] }) {
+export default function List() {
+    const context = useContext(PostContext);
+
+    if (context === null) {
+        console.error("[List] Err: 'context' is 'null'");
+        return <></>;
+    }
+
+    const { posts } = context;
+
     return (
         <ul>
             {posts.map((post, i) => (

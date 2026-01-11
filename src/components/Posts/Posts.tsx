@@ -1,10 +1,10 @@
 import { Post } from "../../types/post";
 import List from "../List";
 
-export default function Posts({ posts }: { posts: Post[] }) {
+export default function Posts() {
     return (
         <section>
-            <List posts={posts} />
+            <List />
         </section>
     );
 }

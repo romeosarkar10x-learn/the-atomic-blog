@@ -1,28 +1,28 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import { OnClearPostsFnType } from "../../types/fn";
 import { Post } from "../../types/post";
 import Results from "../Results";
 import SearchPosts from "../SearchPosts";
+import PostContext from "../../contexts/PostContext/PostContext";
 
-export default function Header({
-    posts,
-    onClearPosts,
-    searchQuery,
-    setSearchQuery,
-}: {
-    posts: Post[];
-    onClearPosts: OnClearPostsFnType;
-    searchQuery: string;
-    setSearchQuery: Dispatch<SetStateAction<string>>;
-}) {
+export default function Header() {
+    const context = useContext(PostContext);
+
+    if (context === null) {
+        console.error("[Header] Err: 'context' is 'null'");
+        return <></>;
+    }
+
+    const { onClearPosts } = context;
+
     return (
         <header>
             <h1>
                 <span>⚛️</span>The Atomic Blog
             </h1>
             <div>
-                <Results posts={posts} />
-                <SearchPosts searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                <Results />
+                <SearchPosts />
                 <button onClick={onClearPosts}>Clear posts</button>
             </div>
         </header>
