@@ -30,13 +30,13 @@ cd the-atomic-blog
 2. Install dependencies
 
 ```bash
-npm install
+bun install
 ```
 
 3. Start the development server
 
 ```bash
-npm start
+bun start
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
@@ -44,7 +44,7 @@ npm start
 ## 📦 Build for Production
 
 ```bash
-npm run build
+bun run build
 ```
 
 ## 🙏 Credits
