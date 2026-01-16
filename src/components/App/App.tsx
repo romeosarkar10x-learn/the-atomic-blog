@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import type { Post } from "../../types/post";
 
 import Header from "../Header";
 import Main from "../Main";
