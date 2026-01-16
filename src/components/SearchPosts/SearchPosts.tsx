@@ -1,13 +1,7 @@
-import { useContext } from "react";
-import PostContext from "../../contexts/PostContext/PostContext";
+import { usePostContext } from "../../hooks/usePostContext";
 
 export default function SearchPosts() {
-    const context = useContext(PostContext);
-
-    if (context === null) {
-        console.error("[SearchPosts] Err: 'context' is 'null'");
-        return <></>;
-    }
+    const context = usePostContext();
 
     const { searchQuery, setSearchQuery } = context;
     return <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search posts..." />;

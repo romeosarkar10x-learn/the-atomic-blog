@@ -1,15 +1,9 @@
 import Results from "../Results";
 import SearchPosts from "../SearchPosts";
-import PostContext from "../../contexts/PostContext/PostContext";
-import { useContext } from "react";
+import { usePostContext } from "../../hooks/usePostContext";
 
 export default function Header() {
-    const context = useContext(PostContext);
-
-    if (context === null) {
-        console.error("[Header] Err: 'context' is 'null'");
-        return <></>;
-    }
+    const context = usePostContext();
 
     const { onClearPosts } = context;
 

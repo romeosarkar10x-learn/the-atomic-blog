@@ -1,13 +1,7 @@
-import { useContext } from "react";
-import PostContext from "../../contexts/PostContext/PostContext";
+import { usePostContext } from "../../hooks/usePostContext";
 
 export default function Results() {
-    const context = useContext(PostContext);
-
-    if (context === null) {
-        console.error("[Results] Error: 'context' is 'null'");
-        return <></>;
-    }
+    const context = usePostContext();
 
     const { posts } = context;
     return <p>🚀 {posts.length} atomic posts found</p>;

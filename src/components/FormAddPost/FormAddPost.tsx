@@ -1,16 +1,11 @@
-import { useContext, useState } from "react";
-import PostContext from "../../contexts/PostContext/PostContext";
+import { useState } from "react";
+import { usePostContext } from "../../hooks/usePostContext";
 
 export default function FormAddPost() {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
 
-    const context = useContext(PostContext);
-
-    if (context === null) {
-        console.error("[FormAddPost] Err: 'context' is 'null'");
-        return <></>;
-    }
+    const context = usePostContext();
 
     const { onAddPost } = context;
 

@@ -1,13 +1,7 @@
-import { useContext } from "react";
-import PostContext from "../../contexts/PostContext/PostContext";
+import { usePostContext } from "../../hooks/usePostContext";
 
 export default function List() {
-    const context = useContext(PostContext);
-
-    if (context === null) {
-        console.error("[List] Err: 'context' is 'null'");
-        return <></>;
-    }
+    const context = usePostContext();
 
     const { posts } = context;
 
